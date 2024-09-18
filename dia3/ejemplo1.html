@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var listaNombres=["Juan","Jose","Javier","Jaime","Jazmin"]
+        function guardarDatos(){
+            let nombre=document.getElementById("nombre").value;
+            let posicion=listaNombres.indexOf(nombre); /*Busca la posicion de nombre en la lista, si está la devuelve y si no devuelve -1*/
+            let i=0;
+            while(i<listaNombres.length && listaNombres[i]!=nombre){
+                i++;
+            }
+            if(usuarioSiEsta){
+                alert("El nombre no está disponible. Elija otro")
+            }else{
+                let puntos=document.getElementById("puntos").value;
+                let texto=`<tr>
+                        <td>${nombre}</td>
+                        <td>${puntos}</td>
+                    </tr>`;
+                document.getElementById("tbody1").innerHTML+=texto;
+                document.getElementById("total").value = parseInt(document.getElementById("total").value) + parseInt(puntos);
+            }
+            /*for(var i=0; i<listaNombres.length; i++){
+                if(listaNombres[i]==nombre){
+                    
+                }
+            }*/
+            
+            
+            }
+    </script>
+</head>
+<body>
+    <p>Nombre:<input type="text" id="nombre"></p>
+    <p>Puntos:<input type="text" id="puntos"></p>
+    <p>Total:<input type="text" id="total" value="0"></p>
+    <p><button type="button" onclick="guardarDatos()">Guardar</button></p>
+    <table id="tabla1">
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Puntos</td>
+            </tr>
+        </thead>
+        <tbody id="tbody1">
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+</body>
+</html>
