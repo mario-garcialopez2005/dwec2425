@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nombreImg=prompt("Escriba el nombre de una imagen");
+        var numeroUsuario=prompt("Escriba un numero");
+        
+        do{
+            numeroUsuario=prompt("Escriba un numero");
+        } while(numeroUsuario<1 || numeroUsuario>10)
+        var texto="";
+        for(var numero=1; numero<=numeroUsuario; numero++){
+            texto+=`<img src='${nombreImg}'/>`;
+            /*Otra versión = "<img src='"+nombreImg+"'/>"*/
+            }
+        document.body.innerHTML=texto;
+    </script>
+    
+</body>
+</html>
