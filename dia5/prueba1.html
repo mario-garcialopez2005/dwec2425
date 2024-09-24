@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <title>Document</title>
+    <script>
+        function mayorde20(){
+            var frase1=document.getElementById("frase1").value;
+            if(frase1.length>20){
+                alert("Es mayor de 20 caracteres");
+            }
+        }
+        function esAprobado(){
+            if(document.getElementById("frase2").value.indexOf("aprobado")!=-1){
+                alert("Contiene 'aprobado'");
+            }
+        }
+        function posicionAdo(){
+            var posicion=document.getElementById("frase1").value.indexOf("ado");
+            if(posicion!=-1){
+                alert("Posicion: "+posicion);
+            }else{
+                alert("NO APARECE");
+            }
+        }
+        function numeroAprobado(){
+            let frase=document.getElementById("frase1").value;
+            let cont=0;
+            let posicion=0;
+            while (posicion<frase.length){
+                posicion=frase.indexOf("aprobado", posicion)
+                if(posicion!=-1){
+                    cont++;
+                    posicion+=8;
+                }else{
+                    posicion=frase.length;
+                }
+            }
+            alert("Numero de 'aprobado': "+cont)
+            
+        }
+        function caracteres456(){
+            let frase=prompt("Escriba una frase");
+            alert(frase.substring(3,6))
+        }
+        function caracteresDespuesXYZ(){
+            let frase=prompt("Escriba una frase");
+            let posicion= frase.indexOf("XYZ");
+            if(posicion!=-1){
+                alert(frase.substring(posicion+3,posicion+8));
+            }
+        }
+        function cambiarDAW(){
+            let frase=prompt("Escriba una frase");
+            alert(frase.replace(/daw/g,"DAW"));
+        }
+        function todoMayusculas(){
+            let frase=prompt("Escriba una frase");
+            alert(frase.toUpperCase);
+        }
+        function todoMinusculas(){
+            let frase=prompt("Escriba una frase");
+            alert(frase.toLowerCase);
+        }
+    </script>
+</head>
+<body>
+    <H1> USO DE STRINGS</H1>
+    <span>FRASE1: </span><input type="Text" id="frase1"><br/>
+ 
+    <span>FRASE2: </span><textarea id="frase2"></textarea><br/>
+ 
+    <button type="button" onclick="mayorde20()">Pulsame</button>
+    <button type="button" onclick="esAprobado()">Pulsame 2</button>
+    <button type="button" onclick="posicionAdo()">Pulsame 3</button>
+    <button type="button" onclick="numeroAprobado()">Pulsame 4</button>
+    <button type="button" onclick="caracteres456()">Pulsame 5</button>
+    <button type="button" onclick="caracteresDespuesXYZ()">Pulsame 6</button>
+    <button type="button" onclick="cambiarDAW()">Pulsame 7</button>
+    <button type="button" onclick="todoMayusculas()">Pulsame 8</button>
+    <button type="button" onclick="todoMinusculas()">Pulsame 9</button>
+</body>
+</html>
