@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .oculto{
+            display: none;
+        }
+        .visible{
+            display: block;
+            color: red;
+        }
+    </style>
+    <script>
+        var listaUsuarios=[["usuario1","1234"],["usuario2","5678"],["usuario3", "7412"],["usuario4", "8523"],["usuario5", "9632"]]
+        function verificarUsuario(){
+            let usuarioInt=document.getElementById("usuario").value;
+            let contraseniaInt=document.getElementById("contrasenia").value;
+            if(listaUsuarios.findIndex((usuario)=> usuario[0]==usuarioInt && usuario[1]==contraseniaInt)!=-1){
+                location.href="aterrizaje.html";
+            }else{
+                document.getElementById("errorCodigoClave").className="visible";
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>Usuario: <input type="text" id="usuario"></p>
+        <label for="contrasenia">Contraseña: </label>
+        <input type="password" id="contrasenia">
+        <p id="errorCodigoClave" class="oculto">El usuario y/o la clave son incorrectos</p>
+        <button type="button" onclick="verificarUsuario()">Entrar</button>
+    </form>
+</body>
+</html>

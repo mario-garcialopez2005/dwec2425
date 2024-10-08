@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, th, td{
+            border: 2px solid blue;
+        }
+        #nuevo{
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            z-index: -1;
+            background-color: white;
+            border: 2px solid olive;
+        }
+        #central{
+
+            background-color: white;
+            z-index: 1;
+        }
+        .visible{
+            display: block;
+        }
+        .oculto{
+            display: none;
+        }
+    </style>
+    <script>
+        onload = ()=>{
+            rellenarListaProyectos();
+            pintarProyectos(listaProyectos);
+        }
+        var listaProyectos=[]
+        function rellenarListaProyectos(){
+            listaProyectos.push([1,"Proyecto 1",1000]);
+            listaProyectos.push([10,"Proyecto 2",100]);
+            listaProyectos.push([7,"Proyecto 3",2000]);
+            listaProyectos.push([4,"Proyecto 4",10000]);
+            listaProyectos.push([2,"Proyecto 5",9000]);
+            listaProyectos.push([19,"Proyecto 6",21000]);
+            listaProyectos.push([12,"Proyecto 7",331000]);
+
+        }
+        function pintarProyectos(lista){
+            /*if(document.getElementsByTagName("tr")){
+                document.getElementsByTagName("tr");
+            }*/
+            let tbody=document.getElementsByTagName("tbody")[0];
+            tbody.innerHTML="";
+            let texto="";
+            lista.forEach(elemento => {
+                texto+=`<tr>
+                            <td>${elemento[0]}</td>
+                            <td>${elemento[1]}</td>
+                            <td>${elemento[2]}</td>
+                        </tr>`
+            });
+            tbody.insertAdjacentHTML("beforeend",texto)
+        }
+        function volverAtras(){
+            location.href="aterrizaje.html";
+        }
+        function ordenarLista(lista){
+            lista.sort((a, b) => {
+                if (a[0] > b[0]) return 1;
+                else return -1;
+            });
+            pintarProyectos(lista);
+        }
+        function mostrarNuevo(){
+            document.getElementById("nuevo").style.zIndex=2;
+        }
+        function cerrarNuevo(){
+            document.getElementById("nuevo").style.zIndex=-1;
+        }
+        function crearNuevoProyecto(){
+            let codigo=document.getElementById("codigo");
+            let descripcion=document.getElementById("descripcion");
+            let presupuesto=document.getElementById("presupuesto");
+            listaProyectos.push([codigo, descripcion, presupuesto]);
+            cerrarNuevo();
+            pintarProyectos(listaProyectos);
+        }
+        function imprimirPagina(){
+            print();
+        }
+    </script>
+</head>
+<body>
+    <h1>
+        <span><a href="proyectos.html">Proyectos</a></span>
+    </h1>
+    <div id="central">
+        <table>
+            <thead>
+                <th>Codigo </th>
+                <th>Descripción</th>
+                <th>Presupuesto inicial</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    </br>
+    <div id="acciones">
+        <button type="button" id="cancelar" onclick="volverAtras()">Cancelar</button>
+        <button type="button" id="ordenar" onclick="ordenarLista(listaProyectos)">Ordenar</button>
+        <button type="button" id="crearNuevo" onclick="mostrarNuevo()">Nuevo</button>
+        <button type="button" id="imprimir" onclick="imprimirPagina()">Imprimir</button>
+    </div>
+    <div id="nuevo">
+        <button type="button" onclick="cerrarNuevo()">X</button>
+        <p>Codigo<input type="text" id="codigo"></p>
+        <p>Descripción<input type="text" id="descripcion"></p>
+        <p>Presupuesto<input type="text" id="presupuesto"></p>
+        <button type="button" onclick="crearNuevoProyecto()">Aceptar</button>
+        <button type="button" onclick="cerrarNuevo()">Cancelar</button>
+    </div>
+</body>
+</html>
