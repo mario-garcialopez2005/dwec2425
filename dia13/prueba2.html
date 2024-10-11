@@ -22,12 +22,15 @@
             $.getJSON("datosAlumno.json",(lista)=>{
                 listaAlumnos=lista;
                 listaAlumnos.map(alumno=>alumno.mostrarDetalles= function(){
-                    let codigoHTMLDiv=`<div>
-                        <p>Nombre:${this.nombre}</p>
+                    let codigoHTMLDiv=`<div>`;
+                    for(campo in alumno){
+                        codigoHTMLDiv+=`<p>${campo}:${alumno[campo]}</p>`
+                    }    
+                        /*`<p>Nombre:${this.nombre}</p>
                         <p>Apellidos:${this.apellidos}</p>
                         <p>Numero Matricula:${this.numeroMatricula}</p>
-                        <p>Lista de modulos:${this.listaModulos}</p>
-                    </div>`;
+                        <p>Lista de modulos:${this.listaModulos}</p>*/
+                        codigoHTMLDiv+=`<div>`;
                     document.body.insertAdjacentHTML("beforeend",codigoHTMLDiv);
                 })
                 console.log(listaAlumnos);

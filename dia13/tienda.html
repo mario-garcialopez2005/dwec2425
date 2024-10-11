@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,tr,td{
+            border: 2px solid black;
+        }
+    </style>
+    <script src="Vehiculo.js"></script>
+    <script src="Tienda.js"></script>
+    <script>
+        let tienda= new Tienda("Tienda1","Direccion1",9852525,[]);
+
+        onload = function(){
+            tienda.cargarVehiculos();
+            
+            tienda.mostrarVehiculosEnTabla();
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

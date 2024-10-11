@@ -1,6 +1,6 @@
 
 class Alumno {
-  constructor(nombre,apellidos,matricula)
+  constructor(nombre,apellidos,matricula){
   this.nombre= nombre;
   this.apellidos= apellidos;
   this.nombreCompleto= nombre + " " + apellidos;

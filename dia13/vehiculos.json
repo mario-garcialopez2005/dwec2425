@@ -1,0 +1,57 @@
+[
+    {
+        "marca" : "marca",
+        "modelo" : "modelo",
+        "color" :"color",
+        "matricula" :"matricula",
+        "kilometros" :"kilometros",
+        "numeroAsientos" :"numeroAsientos",
+        "cilindrada" :"cilindrada",
+        "antiguedad" :"antiguedad",
+        "foto" :"foto"
+    },
+    {
+        "marca" : "marca",
+        "modelo" : "modelo",
+        "color" :"color",
+        "matricula" :"matricula",
+        "kilometros" :"kilometros",
+        "numeroAsientos" :"numeroAsientos",
+        "cilindrada" :"cilindrada",
+        "antiguedad" :"antiguedad",
+        "foto" :"foto"
+    },
+    {
+        "marca" : "marca",
+        "modelo" : "modelo",
+        "color" :"color",
+        "matricula" :"matricula",
+        "kilometros" :"kilometros",
+        "numeroAsientos" :"numeroAsientos",
+        "cilindrada" :"cilindrada",
+        "antiguedad" :"antiguedad",
+        "foto" :"foto"
+    },
+    {
+        "marca" : "marca",
+        "modelo" : "modelo",
+        "color" :"color",
+        "matricula" :"matricula",
+        "kilometros" :"kilometros",
+        "numeroAsientos" :"numeroAsientos",
+        "cilindrada" :"cilindrada",
+        "antiguedad" :"antiguedad",
+        "foto" :"foto"
+    },
+    {
+        "marca" : "marca",
+        "modelo" : "modelo",
+        "color" :"color",
+        "matricula" :"matricula",
+        "kilometros" :"kilometros",
+        "numeroAsientos" :"numeroAsientos",
+        "cilindrada" :"cilindrada",
+        "antiguedad" :"antiguedad",
+        "foto" :"foto"
+    }
+]
